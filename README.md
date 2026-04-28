@@ -68,15 +68,15 @@ ollama pull mistral
 # 📂 ESTRUTURA DO PROJETO
 
 project/
-│── app.py
-│── chroma_db/
-│── README.md
-│── Images/  
-│   └── saida.png  
-│── pdfs/  
-│   ├── documento1.pdf  
-│   ├── documento2.pdf  
-│   └── documento3.pdf  
+├── app.py
+├── chroma_db/
+├── README.md
+├── Images/
+│   └── saida.png
+└── pdfs/
+    ├── documento1.pdf
+    ├── documento2.pdf
+    └── documento3.pdf
 
 ---
 
