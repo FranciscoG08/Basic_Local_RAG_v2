@@ -1,14 +1,12 @@
-# =========================
 # RAG LOCAL COM PDFS + CHROMADB PERSISTENTE + OLLAMA
-# =========================
 
-Este projeto implementa um sistema RAG (Retrieval-Augmented Generation) local com suporte a chat, utilizando:
+Este projeto implementa um sistema **RAG (Retrieval-Augmented Generation)** local com suporte a chat, utilizando:
 
-- PDFs como base de conhecimento
-- ChromaDB com persistência local
-- Sentence Transformers para embeddings
-- Ollama (Mistral) como modelo de linguagem
-- Histórico de conversa (chat memory)
+- **PDFs** como base de conhecimento
+- **ChromaDB** com persistência local
+- **Sentence** Transformers para embeddings
+- **Ollama + Mistral** para gerar respostas  
+- **Histórico** de conversa (chat memory)
 
 ---
 
@@ -18,7 +16,7 @@ Este projeto implementa um sistema RAG (Retrieval-Augmented Generation) local co
 
 PDFs → Extração de texto → Chunking → Embeddings → ChromaDB (persistente)
 
-Pergunta → Embedding → Pesquisa semântica → Contexto + Histórico → Mistral → Resposta
+Pergunta → Embedding → Pesquisa semântica → Prompt(Contexto) + Histórico → Mistral → Resposta
 
 ---
 
@@ -37,38 +35,48 @@ Pergunta → Embedding → Pesquisa semântica → Contexto + Histórico → Mis
 
 ## 1. Criar ambiente virtual
 
+```bash
 python -m venv env
+```
 
 ---
 
 ## 2. Ativar ambiente virtual
 
-Windows:
-env\Scripts\activate
+### Windows
 
----
+```bash
+env\Scripts\activate
+```
 
 ## 3. Instalar dependências
 
-pip install -r requirements.txt
+```bash
+pip install -r .\requirements.txt
+```
 
 ---
 
 ## 4. Instalar modelo Ollama
 
+```bash
 ollama pull mistral
+```
 
 ---
 
 # 📂 ESTRUTURA DO PROJETO
 
 project/
-│
-├── app.py
-├── chroma_db/          # Base de dados vetorial persistente
-├── pdfs/               # PDFs de conhecimento
-├── Images/             # Prints de conversas
-└── README.md
+│── app.py
+│── chroma_db/
+│── README.md
+│── Images/  
+│   └── saida.png  
+│── pdfs/  
+│   ├── documento1.pdf  
+│   ├── documento2.pdf  
+│   └── documento3.pdf  
 
 ---
 
@@ -128,9 +136,11 @@ Isto significa:
 
 ---
 
-# ▶️ EXECUTAR PROJETO
+# ▶️ Executar Projeto
 
+```bash
 python main.py
+```
 
 ---
 
@@ -172,16 +182,6 @@ Este é um comportamento esperado em sistemas RAG simplificados e pode ser melho
 
 ---
 
-# 🔧 PROCESSO INTERNO
-
-1. Carrega PDFs
-2. Divide texto em chunks
-3. Cria embeddings
-4. Guarda no ChromaDB
-5. Pesquisa por similaridade
-6. Junta contexto + histórico
-7. Gera resposta com Mistral
-
 ---
 
 # ⭐ DIFERENÇAS IMPORTANTES (VS VERSÃO 1)
@@ -193,9 +193,9 @@ Este é um comportamento esperado em sistemas RAG simplificados e pode ser melho
 
 ---
 
-# 🎯 OBJETIVO
+# ⭐ Resumo
 
-Criar um assistente local inteligente capaz de responder perguntas com base em documentos PDF, mantendo contexto de conversa e evitando reprocessamento desnecessário.
+Este projeto cria um assistente inteligente local especializado em turismo em Portugal, capaz de analisar os documentos PDF fornecidos e responder a perguntas sobre destinos, atrações, monumentos, gastronomia, cultura e locais de interesse turístico. Utilizando tecnologia RAG com IA, o sistema pesquisa automaticamente a informação mais relevante nos PDFs e gera respostas claras e contextualizadas. Adicionalmente, mantém histórico de conversação, permitindo continuidade no diálogo e melhor compreensão de perguntas subsequentes.
 
 ---
 
