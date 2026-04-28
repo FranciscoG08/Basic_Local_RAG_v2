@@ -67,6 +67,7 @@ ollama pull mistral
 
 # 📂 ESTRUTURA DO PROJETO
 
+```bash
 project/
 ├── app.py
 ├── chroma_db/
@@ -77,6 +78,7 @@ project/
     ├── documento1.pdf
     ├── documento2.pdf
     └── documento3.pdf
+```
 
 ---
 
